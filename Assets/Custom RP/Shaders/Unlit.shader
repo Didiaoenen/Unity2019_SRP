@@ -13,7 +13,7 @@
 
     SubShader
     {
-        pass
+        Pass
         {
             Blend [_SrcBlend] [_DstBlend]
             HLSLPROGRAM

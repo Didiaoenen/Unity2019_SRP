@@ -18,7 +18,7 @@ Shader "Custom RP/Lit"
 
     SubShader
     {
-        pass
+        Pass
         {
             Tags {
                 "LightMode" = "CustomLit"
@@ -32,6 +32,24 @@ Shader "Custom RP/Lit"
             #pragma vertex LitPassVertex
             #pragma fragment LitPassFragment
             #include "LitPass.hlsl"
+            ENDHLSL
+        }
+
+        Pass
+        {
+            Tags
+            {
+                "LightMode" = "ShadowCaster"
+            }
+
+            ColorMask 0
+
+            HLSLPROGRAM
+            #pragma target 3.5
+            #pragma multi_compile_instancing
+            #pragma vertex ShadowCasterPassVertex
+            #pragma fragment ShadowCasterPassFragment
+            #include "ShadowCasterPass.hlsl"
             ENDHLSL
         }
     }
