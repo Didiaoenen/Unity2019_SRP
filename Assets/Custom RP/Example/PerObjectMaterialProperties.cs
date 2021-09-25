@@ -1,14 +1,16 @@
 using UnityEngine;
 
 [DisallowMultipleComponent]
-public class PerObjectMaterialProperties : MonoBehaviour {
-    
-    static MaterialPropertyBlock block;
+public class PerObjectMaterialProperties : MonoBehaviour
+{
 
-    static int baseColorId = Shader.PropertyToID("_BaseColor"),
+    static int
+        baseColorId = Shader.PropertyToID("_BaseColor"),
         cutoffId = Shader.PropertyToID("_Cutoff"),
         metallicId = Shader.PropertyToID("_Metallic"),
         smoothnessId = Shader.PropertyToID("_Smoothness");
+
+    static MaterialPropertyBlock block;
 
     [SerializeField]
     Color baseColor = Color.white;
@@ -18,15 +20,15 @@ public class PerObjectMaterialProperties : MonoBehaviour {
 
     void Awake()
     {
-        OnValidate();    
+        OnValidate();
     }
 
     void OnValidate()
     {
-        if(block == null)
+        if (block == null)
         {
             block = new MaterialPropertyBlock();
-        }    
+        }
         block.SetColor(baseColorId, baseColor);
         block.SetFloat(cutoffId, alphaCutoff);
         block.SetFloat(metallicId, metallic);

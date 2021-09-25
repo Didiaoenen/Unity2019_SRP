@@ -9,11 +9,11 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Lit Transparent
   m_Shader: {fileID: 4800000, guid: f8637b31832d87c44b19b88bed011ece, type: 3}
-  m_ShaderKeywords: _PREMULTIPLY_ALPHA
+  m_ShaderKeywords: _PREMULTIPLY_ALPHA _RECEIVE_SHADOWS _SHADOWS_DITHER
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2450
+  m_CustomRenderQueue: 3000
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -73,7 +73,9 @@ Material:
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _PremulAlpha: 1
-    - _Smoothness: 0.828
+    - _ReceiveShadows: 1
+    - _Shadows: 2
+    - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
