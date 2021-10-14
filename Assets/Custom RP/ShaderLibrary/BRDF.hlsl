@@ -52,9 +52,9 @@ float3 IndirectBRDF (
 ) {
 	float fresnelStrength = surface.fresnelStrength *
 		Pow4(1.0 - saturate(dot(surface.normal, surface.viewDirection)));
-	float3 reflecttion = specular * lerp(brdf.specular, brdf.fresnel, fresnelStrength);
-	reflecttion /= brdf.roughness * brdf.roughness + 1.0;
-	return diffuse * brdf.diffuse + reflecttion;
+	float3 reflection = specular * lerp(brdf.specular, brdf.fresnel, fresnelStrength);
+	reflection /= brdf.roughness * brdf.roughness + 1.0;
+	return (diffuse * brdf.diffuse + reflection) * surface.occlusion;
 }
 
 #endif
