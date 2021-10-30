@@ -11,9 +11,9 @@ CBUFFER_START(UnityPerDraw)
 	real4 unity_LightIndices[2];
 
 	float4 unity_ProbesOcclusion;
-
+	
 	float4 unity_SpecCube0_HDR;
-
+	
 	float4 unity_LightmapST;
 	float4 unity_DynamicLightmapST;
 

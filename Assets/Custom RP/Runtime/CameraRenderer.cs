@@ -6,8 +6,8 @@ public partial class CameraRenderer
 
     const string bufferName = "Render Camera";
 
-    static ShaderTagId
-        unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit"),
+    static ShaderTagId 
+		unlitShaderTagId = new ShaderTagId("SRPDefaultUnlit"),
         litShaderTagId = new ShaderTagId("CustomLit");
 
     CommandBuffer buffer = new CommandBuffer
@@ -41,10 +41,14 @@ public partial class CameraRenderer
 
         buffer.BeginSample(SampleName);
         ExecuteBuffer();
-        lighting.Setup(context, cullingResults, shadowSettings, useLightsPerObject);
+        lighting.Setup(
+            context, cullingResults, shadowSettings, useLightsPerObject
+        );
         buffer.EndSample(SampleName);
         Setup();
-        DrawVisibleGeometry(useDynamicBatching, useGPUInstancing, useLightsPerObject);
+        DrawVisibleGeometry(
+            useDynamicBatching, useGPUInstancing, useLightsPerObject
+        );
         DrawUnsupportedShaders();
         DrawGizmos();
         lighting.Cleanup();
@@ -89,7 +93,9 @@ public partial class CameraRenderer
         buffer.Clear();
     }
 
-    void DrawVisibleGeometry(bool useDynamicBatching, bool useGPUInstancing, bool useLightsPerObject)
+    void DrawVisibleGeometry(
+        bool useDynamicBatching, bool useGPUInstancing, bool useLightsPerObject
+    )
     {
         PerObjectData lightsPerObjectFlags = useLightsPerObject ?
             PerObjectData.LightData | PerObjectData.LightIndices :
@@ -106,7 +112,7 @@ public partial class CameraRenderer
             enableInstancing = useGPUInstancing,
             perObjectData =
                 PerObjectData.ReflectionProbes |
-                PerObjectData.Lightmaps | PerObjectData.ShadowMask | 
+                PerObjectData.Lightmaps | PerObjectData.ShadowMask |
                 PerObjectData.LightProbe | PerObjectData.OcclusionProbe |
                 PerObjectData.LightProbeProxyVolume |
                 PerObjectData.OcclusionProbeProxyVolume |

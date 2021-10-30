@@ -5,6 +5,7 @@ using LightType = UnityEngine.LightType;
 
 public partial class CustomRenderPipeline
 {
+
     partial void InitializeForEditor();
 
 #if UNITY_EDITOR
@@ -37,13 +38,11 @@ public partial class CustomRenderPipeline
                     case LightType.Point:
                         var pointLight = new PointLight();
                         LightmapperUtils.Extract(light, ref pointLight);
-                        lightData.Init(ref pointLight); 
+                        lightData.Init(ref pointLight);
                         break;
                     case LightType.Spot:
                         var spotLight = new SpotLight();
                         LightmapperUtils.Extract(light, ref spotLight);
-                        spotLight.innerConeAngle = light.innerSpotAngle * Mathf.Deg2Rad;
-                        spotLight.angularFalloff = AngularFalloffType.AnalyticAndInnerAngle;
                         lightData.Init(ref spotLight);
                         break;
                     case LightType.Area:
@@ -60,5 +59,6 @@ public partial class CustomRenderPipeline
                 output[i] = lightData;
             }
         };
+
 #endif
 }

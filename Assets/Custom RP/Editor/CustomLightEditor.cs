@@ -1,10 +1,11 @@
-using UnityEditor;
 using UnityEngine;
+using UnityEditor;
 
 [CanEditMultipleObjects]
 [CustomEditorForRenderPipeline(typeof(Light), typeof(CustomRenderPipelineAsset))]
 public class CustomLightEditor : LightEditor {
-    public override void OnInspectorGUI() {
+
+	public override void OnInspectorGUI() {
 		base.OnInspectorGUI();
 		if (
 			!settings.lightType.hasMultipleDifferentValues &&

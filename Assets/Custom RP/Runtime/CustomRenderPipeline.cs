@@ -21,7 +21,6 @@ public partial class CustomRenderPipeline : RenderPipeline
         this.useLightsPerObject = useLightsPerObject;
         GraphicsSettings.useScriptableRenderPipelineBatching = useSRPBatcher;
         GraphicsSettings.lightsUseLinearIntensity = true;
-
         InitializeForEditor();
     }
 
@@ -32,7 +31,8 @@ public partial class CustomRenderPipeline : RenderPipeline
         foreach (Camera camera in cameras)
         {
             renderer.Render(
-                context, camera, useDynamicBatching, useGPUInstancing, useLightsPerObject,
+                context, camera,
+                useDynamicBatching, useGPUInstancing, useLightsPerObject,
                 shadowSettings
             );
         }
