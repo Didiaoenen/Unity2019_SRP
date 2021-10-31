@@ -110,6 +110,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.777
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &256349313903837346
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,6 +222,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &293755980400707970
 GameObject:
   m_ObjectHideFlags: 0
@@ -331,6 +333,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0.916
   smoothness: 0.803
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &341910066331511357
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,6 +444,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.769
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &351582246586579759
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +555,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &441189456617466080
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,6 +666,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.777
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &489683930236848204
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,6 +777,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.664
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &554169608869615654
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,6 +888,7 @@ MonoBehaviour:
   alphaCutoff: 0.08
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &559939727481726039
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,6 +999,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &622477084359076440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,6 +1110,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &797878521840678007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1211,6 +1221,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.718
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1012317521575142888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,6 +1332,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.66
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1071419289006611583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,6 +1443,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1212368415362827440
 GameObject:
   m_ObjectHideFlags: 0
@@ -1541,6 +1554,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.651
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1332878992034049564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,6 +1665,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1487588589836333534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,6 +1776,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &1818103945028909282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,6 +1887,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &2000235898883448109
 GameObject:
   m_ObjectHideFlags: 0
@@ -1981,6 +1998,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0.756
   smoothness: 0.517
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &2127968002988777052
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,6 +2109,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.819
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &2175963929181583972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2201,6 +2220,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &2229933647940679952
 GameObject:
   m_ObjectHideFlags: 0
@@ -2311,6 +2331,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &2427333418310888265
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,6 +2442,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &2488973867556234843
 GameObject:
   m_ObjectHideFlags: 0
@@ -2531,6 +2553,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &2917849209891404352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2641,6 +2664,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.71
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &2970470021196808697
 GameObject:
   m_ObjectHideFlags: 0
@@ -2751,6 +2775,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.819
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &2980251556365532443
 GameObject:
   m_ObjectHideFlags: 0
@@ -2861,6 +2886,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &3103101506538445274
 GameObject:
   m_ObjectHideFlags: 0
@@ -3529,6 +3555,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &3819585655271790447
 GameObject:
   m_ObjectHideFlags: 0
@@ -3639,6 +3666,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &3900362042749285070
 GameObject:
   m_ObjectHideFlags: 0
@@ -3749,6 +3777,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.693
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &4521837515363438777
 GameObject:
   m_ObjectHideFlags: 0
@@ -3859,6 +3888,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &4780711984251743856
 GameObject:
   m_ObjectHideFlags: 0
@@ -3969,6 +3999,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &5052084256892086081
 GameObject:
   m_ObjectHideFlags: 0
@@ -4079,6 +4110,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.794
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &5280392588618851958
 GameObject:
   m_ObjectHideFlags: 0
@@ -4189,6 +4221,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &5505723538222736898
 GameObject:
   m_ObjectHideFlags: 0
@@ -4299,6 +4332,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &5601733239592746336
 GameObject:
   m_ObjectHideFlags: 0
@@ -4409,6 +4443,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &5763114157456025102
 GameObject:
   m_ObjectHideFlags: 0
@@ -4519,6 +4554,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.71
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &6048603953086888928
 GameObject:
   m_ObjectHideFlags: 0
@@ -4629,6 +4665,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &6073680094929998335
 GameObject:
   m_ObjectHideFlags: 0
@@ -4739,6 +4776,7 @@ MonoBehaviour:
   alphaCutoff: 0.08
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &6139829461042177825
 GameObject:
   m_ObjectHideFlags: 0
@@ -4849,6 +4887,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.433
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &6158110054453167013
 GameObject:
   m_ObjectHideFlags: 0
@@ -4959,6 +4998,7 @@ MonoBehaviour:
   alphaCutoff: 0.239
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &6229525687306601505
 GameObject:
   m_ObjectHideFlags: 0
@@ -5069,6 +5109,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &6245576797184566797
 GameObject:
   m_ObjectHideFlags: 0
@@ -5179,6 +5220,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &6394166404941839059
 GameObject:
   m_ObjectHideFlags: 0
@@ -5289,6 +5331,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.651
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7080681157268258096
 GameObject:
   m_ObjectHideFlags: 0
@@ -5399,6 +5442,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.676
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7183569835736804982
 GameObject:
   m_ObjectHideFlags: 0
@@ -5509,6 +5553,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7259205283244244788
 GameObject:
   m_ObjectHideFlags: 0
@@ -5619,6 +5664,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7289473606006377818
 GameObject:
   m_ObjectHideFlags: 0
@@ -5729,6 +5775,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7326350706327545756
 GameObject:
   m_ObjectHideFlags: 0
@@ -5839,6 +5886,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.769
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7404878460585099911
 GameObject:
   m_ObjectHideFlags: 0
@@ -5949,6 +5997,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7527611653541098170
 GameObject:
   m_ObjectHideFlags: 0
@@ -6059,6 +6108,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7618158679593615319
 GameObject:
   m_ObjectHideFlags: 0
@@ -6169,6 +6219,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7748730789597481434
 GameObject:
   m_ObjectHideFlags: 0
@@ -6279,6 +6330,7 @@ MonoBehaviour:
   alphaCutoff: 0.475
   metallic: 0
   smoothness: 0.324
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &7774740005692500085
 GameObject:
   m_ObjectHideFlags: 0
@@ -6389,6 +6441,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &8187219060064972548
 GameObject:
   m_ObjectHideFlags: 0
@@ -6499,6 +6552,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &8208103251104738199
 GameObject:
   m_ObjectHideFlags: 0
@@ -6609,6 +6663,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &8366371174213961257
 GameObject:
   m_ObjectHideFlags: 0
@@ -6719,6 +6774,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.567
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &8388973622543404997
 GameObject:
   m_ObjectHideFlags: 0
@@ -6829,6 +6885,7 @@ MonoBehaviour:
   alphaCutoff: 0.5
   metallic: 0
   smoothness: 0.5
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!1 &8949239932420852581
 GameObject:
   m_ObjectHideFlags: 0
@@ -6939,3 +6996,4 @@ MonoBehaviour:
   alphaCutoff: 0.357
   metallic: 0.353
   smoothness: 0.609
+  emissionColor: {r: 0, g: 0, b: 0, a: 1}
