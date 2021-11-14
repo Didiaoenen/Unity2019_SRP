@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f21fadcf89c414981179dc23f79be2, type: 3}
   m_Name: Custom RP
   m_EditorClassIdentifier: 
+  allowHDR: 1
   useDynamicBatching: 0
   useGPUInstancing: 1
   useSRPBatcher: 1
@@ -30,5 +31,5 @@ MonoBehaviour:
       cascadeBlend: 1
     other:
       atlasSize: 1024
-      filter: 0
+      filter: 2
   postFXSettings: {fileID: 11400000, guid: 540b92946f7fe4248b68915f3eb94175, type: 2}
