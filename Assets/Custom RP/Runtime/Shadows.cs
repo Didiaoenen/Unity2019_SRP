@@ -39,7 +39,7 @@ public class Shadows {
 		cascadeCountId = Shader.PropertyToID("_CascadeCount"),
 		cascadeCullingSpheresId = Shader.PropertyToID("_CascadeCullingSpheres"),
 		cascadeDataId = Shader.PropertyToID("_CascadeData"),
-		shadowAtlasSizeId = Shader.PropertyToID("_ShadowAtlasSize"),
+		shadowAtlastSizeId = Shader.PropertyToID("_ShadowAtlasSize"),
 		shadowDistanceFadeId = Shader.PropertyToID("_ShadowDistanceFade"),
 		shadowPancakingId = Shader.PropertyToID("_ShadowPancaking");
 
@@ -216,7 +216,7 @@ public class Shadows {
 				1f / (1f - f * f)
 			)
 		);
-		buffer.SetGlobalVector(shadowAtlasSizeId, atlasSizes);
+		buffer.SetGlobalVector(shadowAtlastSizeId, atlasSizes);
 		buffer.EndSample(bufferName);
 		ExecuteBuffer();
 	}
@@ -264,7 +264,9 @@ public class Shadows {
 	void RenderDirectionalShadows (int index, int split, int tileSize) {
 		ShadowedDirectionalLight light = shadowedDirectionalLights[index];
 		var shadowSettings =
-			new ShadowDrawingSettings(cullingResults, light.visibleLightIndex);
+			new ShadowDrawingSettings(cullingResults, light.visibleLightIndex) {
+				useRenderingLayerMaskTest = true
+			};
 		int cascadeCount = settings.directional.cascadeCount;
 		int tileOffset = index * cascadeCount;
 		Vector3 ratios = settings.directional.CascadeRatios;
@@ -351,7 +353,9 @@ public class Shadows {
 	void RenderSpotShadows (int index, int split, int tileSize) {
 		ShadowedOtherLight light = shadowedOtherLights[index];
 		var shadowSettings =
-			new ShadowDrawingSettings(cullingResults, light.visibleLightIndex);
+			new ShadowDrawingSettings(cullingResults, light.visibleLightIndex) {
+				useRenderingLayerMaskTest = true
+			};
 		cullingResults.ComputeSpotShadowMatricesAndCullingPrimitives(
 			light.visibleLightIndex, out Matrix4x4 viewMatrix,
 			out Matrix4x4 projectionMatrix, out ShadowSplitData splitData
@@ -377,7 +381,9 @@ public class Shadows {
 	void RenderPointShadows (int index, int split, int tileSize) {
 		ShadowedOtherLight light = shadowedOtherLights[index];
 		var shadowSettings =
-			new ShadowDrawingSettings(cullingResults, light.visibleLightIndex);
+			new ShadowDrawingSettings(cullingResults, light.visibleLightIndex) {
+				useRenderingLayerMaskTest = true
+			};
 		float texelSize = 2f / tileSize;
 		float filterSize = texelSize * ((float)settings.other.filter + 1f);
 		float bias = light.normalBias * filterSize * 1.4142136f;

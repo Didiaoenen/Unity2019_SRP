@@ -7,6 +7,8 @@ CBUFFER_START(UnityPerDraw)
 	float4 unity_LODFade;
 	real4 unity_WorldTransformParams;
 
+	float4 unity_RenderingLayer;
+
 	real4 unity_LightData;
 	real4 unity_LightIndices[2];
 
@@ -37,6 +39,9 @@ float4x4 glstate_matrix_projection;
 
 float3 _WorldSpaceCameraPos;
 
+float4 unity_OrthoParams;
 float4 _ProjectionParams;
+float4 _ScreenParams;
+float4 _ZBufferParams;
 
 #endif

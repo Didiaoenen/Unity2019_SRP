@@ -12,11 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f21fadcf89c414981179dc23f79be2, type: 3}
   m_Name: Custom RP
   m_EditorClassIdentifier: 
-  allowHDR: 1
+  cameraBuffer:
+    allowHDR: 1
+    copyColor: 1
+    copyColorReflection: 0
+    copyDepth: 1
+    copyDepthReflection: 0
   useDynamicBatching: 0
   useGPUInstancing: 1
   useSRPBatcher: 1
-  useLightsPerObject: 0
+  useLightsPerObject: 1
   shadows:
     maxDistance: 30
     distanceFade: 0.1
@@ -33,3 +38,6 @@ MonoBehaviour:
       atlasSize: 1024
       filter: 2
   postFXSettings: {fileID: 11400000, guid: 540b92946f7fe4248b68915f3eb94175, type: 2}
+  colorLUTResolution: 32
+  cameraRendererShader: {fileID: 4800000, guid: 7b4d189f6e9cbcf42b82cdcccc0d8f65,
+    type: 3}

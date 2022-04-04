@@ -17,6 +17,7 @@ UNITY_INSTANCING_BUFFER_START(UnityPerMaterial)
 	UNITY_DEFINE_INSTANCED_PROP(float4, _BaseColor)
 	UNITY_DEFINE_INSTANCED_PROP(float4, _EmissionColor)
 	UNITY_DEFINE_INSTANCED_PROP(float, _Cutoff)
+	UNITY_DEFINE_INSTANCED_PROP(float, _ZWrite)
 	UNITY_DEFINE_INSTANCED_PROP(float, _Metallic)
 	UNITY_DEFINE_INSTANCED_PROP(float, _Occlusion)
 	UNITY_DEFINE_INSTANCED_PROP(float, _Smoothness)
@@ -30,14 +31,16 @@ UNITY_INSTANCING_BUFFER_END(UnityPerMaterial)
 #define INPUT_PROP(name) UNITY_ACCESS_INSTANCED_PROP(UnityPerMaterial, name)
 
 struct InputConfig {
+	Fragment fragment;
 	float2 baseUV;
 	float2 detailUV;
 	bool useMask;
 	bool useDetail;
 };
 
-InputConfig GetInputConfig (float2 baseUV, float2 detailUV = 0.0) {
+InputConfig GetInputConfig (float4 positionSS, float2 baseUV, float2 detailUV = 0.0) {
 	InputConfig c;
+	c.fragment = GetFragment(positionSS);
 	c.baseUV = baseUV;
 	c.detailUV = detailUV;
 	c.useMask = false;
@@ -83,6 +86,10 @@ float4 GetBase (InputConfig c) {
 	}
 	
 	return map * color;
+}
+
+float GetFinalAlpha (float alpha) {
+	return INPUT_PROP(_ZWrite) ? 1.0 : alpha;
 }
 
 float3 GetNormalTS (InputConfig c) {
