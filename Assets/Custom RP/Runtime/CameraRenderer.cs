@@ -3,6 +3,8 @@ using UnityEngine.Rendering;
 
 public partial class CameraRenderer {
 
+	public const float renderScaleMin = 0.1f, renderScaleMax = 2f;
+
 	const string bufferName = "Render Camera";
 
 	static ShaderTagId
@@ -10,6 +12,7 @@ public partial class CameraRenderer {
 		litShaderTagId = new ShaderTagId("CustomLit");
 
 	static int
+		bufferSizeId = Shader.PropertyToID("_CameraBufferSize"),
 		colorAttachmentId = Shader.PropertyToID("_CameraColorAttachment"),
 		depthAttachmentId = Shader.PropertyToID("_CameraDepthAttachment"),
 		colorTextureId = Shader.PropertyToID("_CameraColorTexture"),
@@ -37,9 +40,11 @@ public partial class CameraRenderer {
 
 	PostFXStack postFXStack = new PostFXStack();
 
-	bool useHDR;
+	bool useHDR, useScaledRendering;
 
 	bool useColorTexture, useDepthTexture, useIntermediateBuffer;
+
+	Vector2Int bufferSize;
 
 	Material material;
 
@@ -87,22 +92,41 @@ public partial class CameraRenderer {
 			postFXSettings = cameraSettings.postFXSettings;
 		}
 
+		float renderScale = cameraSettings.GetRenderScale(bufferSettings.renderScale);
+		useScaledRendering = renderScale < 0.99f || renderScale > 1.01f;
 		PrepareBuffer();
 		PrepareForSceneWindow();
 		if (!Cull(shadowSettings.maxDistance)) {
 			return;
 		}
+
 		useHDR = bufferSettings.allowHDR && camera.allowHDR;
+		if (useScaledRendering) {
+			renderScale = Mathf.Clamp(renderScale, renderScaleMin, renderScaleMax);
+			bufferSize.x = (int)(camera.pixelWidth * renderScale);
+			bufferSize.y = (int)(camera.pixelHeight * renderScale);
+		}
+		else {
+			bufferSize.x = camera.pixelWidth;
+			bufferSize.y = camera.pixelHeight;
+		}
 
 		buffer.BeginSample(SampleName);
+		buffer.SetGlobalVector(bufferSizeId, new Vector4(
+			1f / bufferSize.x, 1f / bufferSize.y,
+			bufferSize.x, bufferSize.y
+		));
 		ExecuteBuffer();
 		lighting.Setup(
 			context, cullingResults, shadowSettings, useLightsPerObject,
 			cameraSettings.maskLights ? cameraSettings.renderingLayerMask : -1
 		);
+
+		bufferSettings.fxaa.enabled &= cameraSettings.allowFXAA;
 		postFXStack.Setup(
-			context, camera, postFXSettings, useHDR, colorLUTResolution,
-			cameraSettings.finalBlendMode
+			context, camera, bufferSize, postFXSettings, cameraSettings.keepAlpha, useHDR,
+			colorLUTResolution, cameraSettings.finalBlendMode,
+			bufferSettings.bicubicRescaling, bufferSettings.fxaa
 		);
 		buffer.EndSample(SampleName);
 		Setup();
@@ -137,19 +161,19 @@ public partial class CameraRenderer {
 		context.SetupCameraProperties(camera);
 		CameraClearFlags flags = camera.clearFlags;
 
-		useIntermediateBuffer =
+		useIntermediateBuffer = useScaledRendering ||
 			useColorTexture || useDepthTexture || postFXStack.IsActive;
 		if (useIntermediateBuffer) {
 			if (flags > CameraClearFlags.Color) {
 				flags = CameraClearFlags.Color;
 			}
 			buffer.GetTemporaryRT(
-				colorAttachmentId, camera.pixelWidth, camera.pixelHeight,
+				colorAttachmentId, bufferSize.x, bufferSize.y,
 				0, FilterMode.Bilinear, useHDR ?
 					RenderTextureFormat.DefaultHDR : RenderTextureFormat.Default
 			);
 			buffer.GetTemporaryRT(
-				depthAttachmentId, camera.pixelWidth, camera.pixelHeight,
+				depthAttachmentId, bufferSize.x, bufferSize.y,
 				32, FilterMode.Point, RenderTextureFormat.Depth
 			);
 			buffer.SetRenderTarget(
@@ -247,7 +271,7 @@ public partial class CameraRenderer {
 	void CopyAttachments () {
 		if (useColorTexture) {
 			buffer.GetTemporaryRT(
-				colorTextureId, camera.pixelWidth, camera.pixelHeight,
+				colorTextureId, bufferSize.x, bufferSize.y,
 				0, FilterMode.Bilinear, useHDR ?
 					RenderTextureFormat.DefaultHDR : RenderTextureFormat.Default
 			);
@@ -260,7 +284,7 @@ public partial class CameraRenderer {
 		}
 		if (useDepthTexture) {
 			buffer.GetTemporaryRT(
-				depthTextureId, camera.pixelWidth, camera.pixelHeight,
+				depthTextureId, bufferSize.x, bufferSize.y,
 				32, FilterMode.Point, RenderTextureFormat.Depth
 			);
 			if (copyTextureSupported) {
@@ -288,6 +312,7 @@ public partial class CameraRenderer {
 		buffer.SetRenderTarget(
 			to, RenderBufferLoadAction.DontCare, RenderBufferStoreAction.Store
 		);
+		buffer.SetViewport(camera.pixelRect);
 		buffer.DrawProcedural(
 			Matrix4x4.identity, material, isDepth ? 1 : 0, MeshTopology.Triangles, 3
 		);

@@ -6,7 +6,13 @@ public partial class CustomRenderPipelineAsset : RenderPipelineAsset {
 
 	[SerializeField]
 	CameraBufferSettings cameraBuffer = new CameraBufferSettings {
-		allowHDR = true
+		allowHDR = true,
+		renderScale = 1f,
+		fxaa = new CameraBufferSettings.FXAA {
+			fixedThreshold = 0.0833f,
+			relativeThreshold = 0.166f,
+			subpixelBlending = 0.75f
+		}
 	};
 
 	[SerializeField]

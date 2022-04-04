@@ -289,10 +289,28 @@ float3 ApplyColorGradingLUT (float3 color) {
 	);
 }
 
-float4 FinalPassFragment (Varyings input) : SV_TARGET {
+float4 ApplyColorGradingPassFragment (Varyings input) : SV_TARGET {
 	float4 color = GetSource(input.screenUV);
 	color.rgb = ApplyColorGradingLUT(color.rgb);
 	return color;
+}
+
+float4 ApplyColorGradingWithLumaPassFragment (Varyings input) : SV_TARGET {
+	float4 color = GetSource(input.screenUV);
+	color.rgb = ApplyColorGradingLUT(color.rgb);
+	color.a = sqrt(Luminance(color.rgb));
+	return color;
+}
+
+bool _CopyBicubic;
+
+float4 FinalPassFragmentRescale (Varyings input) : SV_TARGET {
+	if (_CopyBicubic) {
+		return GetSourceBicubic(input.screenUV);
+	}
+	else {
+		return GetSource(input.screenUV);
+	}
 }
 
 #endif
